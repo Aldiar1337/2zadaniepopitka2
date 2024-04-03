@@ -5,17 +5,5 @@ using System.Windows;
 
 namespace WpfApp1
 {
-    private void SortAscending_Click(object sender, RoutedEventArgs e)
-    {
-        numbers.Sort();
-        UpdateListBox();
-    }
-
-    // Отсортировать по убыванию
-    private void SortDescending_Click(object sender, RoutedEventArgs e)
-    {
-        numbers.Sort();
-        numbers.Reverse();
-        UpdateListBox();
-    }
+    
 }
