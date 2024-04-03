@@ -47,7 +47,7 @@ namespace WpfApp1
             }
             else
             {
-                MessageBox.Show("Пожалуйста, введите множительь.");
+                MessageBox.Show("Пожалуйста, введите множителььь.");
             }
 
             numbers.Clear();
