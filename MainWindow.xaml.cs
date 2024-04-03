@@ -34,11 +34,6 @@ namespace WpfApp1
         }
         
 
-        private void UpdateListBox()
-        {
-            numberListBox.ItemsSource = null;
-            numberListBox.ItemsSource = numbers;
-        }
-
+      
     }
 }
