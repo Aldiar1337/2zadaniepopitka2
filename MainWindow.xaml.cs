@@ -75,13 +75,7 @@ namespace WpfApp1
         }
         
         // Очистить список
-        private void ClearList_Click(object sender, RoutedEventArgs e)
-        {
-            numbers.Clear();
-            UpdateListBox();
-        }
-
-
+        
 
     }
 }
