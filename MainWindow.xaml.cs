@@ -8,7 +8,12 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         List<int> numbers = new List<int>();
-        
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
         private void AddNumber_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(numberTextBox.Text))
@@ -52,8 +57,10 @@ namespace WpfApp1
             numbers.Clear();
             UpdateListBox();
 
-        }
 
+        }
+        
+        
         private void SortAscending_Click(object sender, RoutedEventArgs e)
         {
             numbers.Sort();
@@ -67,7 +74,8 @@ namespace WpfApp1
             numbers.Reverse();
             UpdateListBox();
         }
-
+        
+      
         private void UpdateListBox()
         {
             numberListBox.ItemsSource = null;
@@ -82,7 +90,6 @@ namespace WpfApp1
             numbers.Clear();
             UpdateListBox();
         }
-        
-    }
+        }
 }
 
