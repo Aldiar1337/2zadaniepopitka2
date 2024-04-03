@@ -13,7 +13,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        
+
         // Помножить все числа на множитель
         private void MultiplyByFactor_Click(object sender, RoutedEventArgs e)
         {
@@ -34,4 +34,40 @@ namespace WpfApp1
                 MessageBox.Show("Пожалуйста, введите множитель.");
             }
         }
-}
+
+
+        private void AddNumber_Click(object sender, RoutedEventArgs e)
+
+        {
+            if (!string.IsNullOrEmpty(numberTextBox.Text))
+            {
+                if (int.TryParse(numberTextBox.Text, out int number))
+                {
+                    numbers.Add(number);
+                    UpdateListBox();
+                }
+                else
+                {
+                    MessageBox.Show("Пожалуйста, введите допустимое целое число».");
+                }
+            }
+            else
+            {
+
+                MessageBox.Show("Пожалуйста, введите множитель.");
+
+                MessageBox.Show("Пожалуйста, введите число.");
+
+            }
+        }
+
+
+        private void UpdateListBox()
+        {
+            numberListBox.ItemsSource = null;
+            numberListBox.ItemsSource = numbers;
+        }
+
+
+            }
+        }
