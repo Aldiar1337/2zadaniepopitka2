@@ -13,26 +13,35 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        private void MultiplyByFactor_Click(object sender, RoutedEventArgs e)
+
+        private void AddNumber_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(numberTextBox.Text))
             {
-                if (int.TryParse(numberTextBox.Text, out int factor))
+                if (int.TryParse(numberTextBox.Text, out int number))
                 {
-                    numbers = numbers.Select(num => num * factor).ToList();
+                    numbers.Add(number);
                     UpdateListBox();
                 }
                 else
                 {
-                    MessageBox.Show("Пожалуйста, введите допустимый множитель.");
+                    MessageBox.Show("Пожалуйста, введите допустимое целое число».");
                 }
             }
             else
             {
-                MessageBox.Show("Пожалуйста, введите множитель.");
-            
-
-
-
+                MessageBox.Show("Пожалуйста, введите число.");
+            }
         }
-}
+
+
+        private void UpdateListBox()
+        {
+            numberListBox.ItemsSource = null;
+            numberListBox.ItemsSource = numbers;
+        }
+
+
+            }
+        }
+    }
