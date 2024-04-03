@@ -13,6 +13,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+      
 
         // Помножить все числа на множитель
         private void MultiplyByFactor_Click(object sender, RoutedEventArgs e)
@@ -34,6 +35,7 @@ namespace WpfApp1
                 MessageBox.Show("Пожалуйста, введите множитель.");
             }
         }
+
 
 
         private void AddNumber_Click(object sender, RoutedEventArgs e)
@@ -75,7 +77,6 @@ namespace WpfApp1
             UpdateListBox();
         }
 
-
         private void UpdateListBox()
         {
             numberListBox.ItemsSource = null;
@@ -83,7 +84,7 @@ namespace WpfApp1
         }
 
 
+
     }
 }
-
 
