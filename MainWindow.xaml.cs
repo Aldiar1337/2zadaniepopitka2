@@ -74,9 +74,15 @@ namespace WpfApp1
             numberListBox.ItemsSource = numbers;
         }
         
-        // Очистить список
-        
 
+        // Очистить список
+   
+        private void ClearList_Click(object sender, RoutedEventArgs e)
+        {
+            numbers.Clear();
+            UpdateListBox();
+        }
+        
     }
 }
 
