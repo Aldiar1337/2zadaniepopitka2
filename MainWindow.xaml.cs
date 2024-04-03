@@ -9,11 +9,26 @@ namespace WpfApp1
     {
         List<int> numbers = new List<int>();
 
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
       
+        private void AddNumber_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(numberTextBox.Text))
+            {
+                if (int.TryParse(numberTextBox.Text, out int number))
+                {
+                    numbers.Add(number);
+                    UpdateListBox();
+                }
+                else
+                {
+                    MessageBox.Show("Пожалуйста, введите допустимое целое число».");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, введите число.");
+            }
+        }
 
         // Помножить все числа на множитель
         private void MultiplyByFactor_Click(object sender, RoutedEventArgs e)
@@ -34,35 +49,14 @@ namespace WpfApp1
             {
                 MessageBox.Show("Пожалуйста, введите множительь.");
             }
+
+            numbers.Clear();
+            UpdateListBox();
+
         }
 
-
-
-        private void AddNumber_Click(object sender, RoutedEventArgs e)
-
-        {
-            if (!string.IsNullOrEmpty(numberTextBox.Text))
-            {
-                if (int.TryParse(numberTextBox.Text, out int number))
-                {
-                    numbers.Add(number);
-                    UpdateListBox();
-                }
-                else
-                {
-                    MessageBox.Show("Пожалуйста, введите допустимое целое число».");
-                }
-            }
-            else
-            {
-
-                MessageBox.Show("Пожалуйста, введите множитель.");
-
-                MessageBox.Show("Пожалуйста, введите число.");
-
-            }
-        }
         
+
         private void SortAscending_Click(object sender, RoutedEventArgs e)
         {
             numbers.Sort();
@@ -83,6 +77,15 @@ namespace WpfApp1
             numberListBox.ItemsSource = numbers;
         }
         
+        // Очистить список
+        private void ClearList_Click(object sender, RoutedEventArgs e)
+        {
+            numbers.Clear();
+            UpdateListBox();
+        }
+
+
+
     }
 }
 
